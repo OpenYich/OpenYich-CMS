@@ -1,0 +1,30 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overridden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+  application:
+    name: openyich-cms
+  profiles:
+    active:
+    - dev
+    - swagger
+server:
+  port: 8280
+  compression:
+    enabled: true
+  connection-timeout:
+    seconds: 2
+  servlet:
+    context-path: /${spring.application.name}
+  
+
