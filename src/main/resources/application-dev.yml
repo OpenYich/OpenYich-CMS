@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/openyich?useUnicode=true&characterEncoding=utf8&autoReconnect=true&autoReconnectForPools=true&noAccessToProcedureBodies=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/openyich_cms?useUnicode=true&characterEncoding=utf8&autoReconnect=true&autoReconnectForPools=true&noAccessToProcedureBodies=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
     username: openyich
     password: openyich
     druid:

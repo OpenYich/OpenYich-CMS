@@ -1,6 +1,10 @@
 package com.openyich.cloud.cms.domain;
 
 import javax.persistence.Column;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.openyich.framework.data.domain.AbstractAuditingEntity;
 
@@ -9,16 +13,18 @@ import com.openyich.framework.data.domain.AbstractAuditingEntity;
  * 
  * @author zhycn
  */
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity extends AbstractAuditingEntity {
 
   private static final long serialVersionUID = 1L;
 
   @Column(name = "status")
   private int status;
-  
+
   @Column(name = "deleted")
   private boolean deleted;
-  
+
   @Column(name = "remark")
   private String remark;
 
@@ -45,5 +51,5 @@ public abstract class BaseEntity extends AbstractAuditingEntity {
   public void setRemark(String remark) {
     this.remark = remark;
   }
-  
+
 }

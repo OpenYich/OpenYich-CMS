@@ -64,6 +64,14 @@ public class SysAccessLog extends BaseEntity {
   @Column(name = "os")
   private String os;
 
+  public SysAccessLog(Long logId) {
+    this.logId = logId;
+  }
+
+  public SysAccessLog() {
+    super();
+  }
+
   public Long getLogId() {
     return logId;
   }
