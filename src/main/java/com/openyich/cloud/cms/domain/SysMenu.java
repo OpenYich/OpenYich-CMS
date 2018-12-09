@@ -70,6 +70,14 @@ public class SysMenu extends BaseEntity {
   @Column(name = "icon")
   private String icon;
 
+  public SysMenu(Long menuId) {
+    this.menuId = menuId;
+  }
+
+  public SysMenu() {
+    super();
+  }
+
   public Long getMenuId() {
     return menuId;
   }

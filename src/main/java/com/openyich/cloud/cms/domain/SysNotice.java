@@ -46,6 +46,14 @@ public class SysNotice extends BaseEntity {
   @Column(name = "notice_content")
   private String noticeContent;
 
+  public SysNotice(Long noticeId) {
+    this.noticeId = noticeId;
+  }
+
+  public SysNotice() {
+    super();
+  }
+
   public Long getNoticeId() {
     return noticeId;
   }

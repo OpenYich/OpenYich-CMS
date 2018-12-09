@@ -45,6 +45,14 @@ public class SysConfig extends BaseEntity {
    */
   @Column(name = "config_value")
   private String configValue;
+  
+  public SysConfig(Long configId) {
+    this.configId = configId;
+  }
+
+  public SysConfig() {
+    super();
+  }
 
   public Long getConfigId() {
     return configId;

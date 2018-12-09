@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.openyich.cloud.cms.domain.SysUserOnline;
 
 @Repository
-public interface SysUserOnlineRepository extends JpaRepository<SysUserOnline, Long> {
+public interface SysUserOnlineRepository extends JpaRepository<SysUserOnline, String> {
 
 }

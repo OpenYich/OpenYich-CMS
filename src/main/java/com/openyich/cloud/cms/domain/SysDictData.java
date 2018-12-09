@@ -70,6 +70,14 @@ public class SysDictData extends BaseEntity {
   @Column(name = "is_default")
   private boolean isDefault;
 
+  public SysDictData(Long dictId) {
+    this.dictId = dictId;
+  }
+
+  public SysDictData() {
+    super();
+  }
+
   public Long getDictId() {
     return dictId;
   }

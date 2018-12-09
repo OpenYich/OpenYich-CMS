@@ -40,6 +40,14 @@ public class SysDictType extends BaseEntity {
   @Column(name = "dict_name")
   private String dictName;
 
+  public SysDictType(Long dictId) {
+    this.dictId = dictId;
+  }
+
+  public SysDictType() {
+    super();
+  }
+
   public Long getDictId() {
     return dictId;
   }

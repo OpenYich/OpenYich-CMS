@@ -1,6 +1,5 @@
 package com.openyich.cloud.cms.mapper;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.OpenyichCMSApplicationTests;
 import com.openyich.cloud.cms.domain.SysAccessLog;
-import com.openyich.cloud.cms.repository.SysAccessLogRepository;
 
 public class SysAccessLogMapperTests extends OpenyichCMSApplicationTests {
 
   @Autowired
-  private SysAccessLogRepository repository;
+  private ISysAccessLogMapper mapper;
 
   @Test
-  public void testInsertAccessLog() {
+  public void testSaveAll() {
+    List<SysAccessLog> list = Lists.newArrayList();
     SysAccessLog accessLog = new SysAccessLog();
     accessLog.setLoginName("admin");
     accessLog.setDeptName("研发部门");
@@ -28,7 +27,7 @@ public class SysAccessLogMapperTests extends OpenyichCMSApplicationTests {
     accessLog.setStatus(1); // 登录状态（0未知 1成功 2失败）
     accessLog.setDeleted(true);
     accessLog.setRemark("登录成功");
-    repository.saveAndFlush(accessLog);
+    list.add(accessLog);
 
     SysAccessLog accessLog2 = new SysAccessLog();
     accessLog2.setLoginName("yq");
@@ -40,33 +39,9 @@ public class SysAccessLogMapperTests extends OpenyichCMSApplicationTests {
     accessLog2.setStatus(1); // 登录状态（0未知 1成功 2失败）
     accessLog.setDeleted(false);
     accessLog2.setRemark("登录成功");
-    repository.save(accessLog2);
-  }
-
-  @Test
-  public void testFindAllAccessLog() {
-    repository.findById(100L);
+    list.add(accessLog2);
     
-    List<Long> ids = Arrays.asList(new Long[] {100L});
-    repository.findAllById(ids);
-    
-    repository.findAll();
-  }
-
-  @Test
-  public void testDeleteAccessLogByIds() {
-    List<Long> ids = Arrays.asList(new Long[] {100L});
-    List<SysAccessLog> entities = Lists.newArrayList();
-    ids.forEach(logId -> {
-      entities.add(new SysAccessLog(logId));
-    });
-
-    repository.deleteInBatch(entities);
-  }
-
-  @Test
-  public void testCleanAllAccessLog() {
-    repository.deleteAllInBatch();
+    mapper.saveAll(list);
   }
 
 }

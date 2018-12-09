@@ -67,6 +67,14 @@ public class SysUserOnline extends BaseEntity {
   @Column(name = "expires_in")
   private int expiresIn;
 
+  public SysUserOnline(String sessionId) {
+    this.sessionId = sessionId;
+  }
+
+  public SysUserOnline() {
+    super();
+  }
+
   public String getSessionId() {
     return sessionId;
   }

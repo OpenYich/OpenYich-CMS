@@ -70,6 +70,14 @@ public class SysDept extends BaseEntity {
   @Column(name = "email")
   private String email;
 
+  public SysDept(Long deptId) {
+    this.deptId = deptId;
+  }
+
+  public SysDept() {
+    super();
+  }
+
   public Long getDeptId() {
     return deptId;
   }

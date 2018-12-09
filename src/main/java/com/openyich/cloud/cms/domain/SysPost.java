@@ -46,6 +46,14 @@ public class SysPost extends BaseEntity {
   @Column(name = "sort_no")
   private Integer sortNo;
 
+  public SysPost(Long postId) {
+    this.postId = postId;
+  }
+
+  public SysPost() {
+    super();
+  }
+
   public Long getPostId() {
     return postId;
   }

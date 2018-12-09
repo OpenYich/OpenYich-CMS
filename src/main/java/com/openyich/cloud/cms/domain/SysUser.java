@@ -88,6 +88,14 @@ public class SysUser extends BaseEntity {
   @Column(name = "salt")
   private String salt;
 
+  public SysUser(Long userId) {
+    this.userId = userId;
+  }
+
+  public SysUser() {
+    super();
+  }
+
   public Long getUserId() {
     return userId;
   }

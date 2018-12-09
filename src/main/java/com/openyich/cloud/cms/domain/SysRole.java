@@ -52,6 +52,14 @@ public class SysRole extends BaseEntity {
   @Column(name = "data_scope")
   private String dataScope;
 
+  public SysRole(Long roleId) {
+    this.roleId = roleId;
+  }
+
+  public SysRole() {
+    super();
+  }
+
   public Long getRoleId() {
     return roleId;
   }

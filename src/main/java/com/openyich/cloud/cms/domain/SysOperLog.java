@@ -88,6 +88,14 @@ public class SysOperLog extends BaseEntity {
   @Column(name = "oper_params")
   private String operParams;
 
+  public SysOperLog(Long operId) {
+    this.operId = operId;
+  }
+
+  public SysOperLog() {
+    super();
+  }
+
   public Long getOperId() {
     return operId;
   }
