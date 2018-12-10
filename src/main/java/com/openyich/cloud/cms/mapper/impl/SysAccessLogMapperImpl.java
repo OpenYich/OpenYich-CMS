@@ -11,9 +11,12 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysAccessLog;
 import com.openyich.cloud.cms.mapper.ISysAccessLogMapper;
 import com.openyich.cloud.cms.repository.SysAccessLogRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysAccessLogMapperImpl implements ISysAccessLogMapper {
+public class SysAccessLogMapperImpl extends AbastractQueryMapperImpl<SysAccessLog>
+    implements
+      ISysAccessLogMapper {
 
   private SysAccessLogRepository repository;
 
@@ -40,7 +43,7 @@ public class SysAccessLogMapperImpl implements ISysAccessLogMapper {
   public void deleteAllById(Iterable<Long> ids) {
     List<SysAccessLog> entities = Lists.newArrayList();
     ids.forEach(logId -> entities.add(new SysAccessLog(logId)));
-    repository.deleteInBatch(entities);;
+    repository.deleteInBatch(entities);
   }
 
   @Override

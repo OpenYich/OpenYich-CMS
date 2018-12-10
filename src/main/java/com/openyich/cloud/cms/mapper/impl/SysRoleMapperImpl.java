@@ -11,9 +11,10 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysRole;
 import com.openyich.cloud.cms.mapper.ISysRoleMapper;
 import com.openyich.cloud.cms.repository.SysRoleRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysRoleMapperImpl implements ISysRoleMapper {
+public class SysRoleMapperImpl extends AbastractQueryMapperImpl<SysRole> implements ISysRoleMapper {
 
   private SysRoleRepository repository;
 

@@ -11,12 +11,13 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysMenu;
 import com.openyich.cloud.cms.mapper.ISysMenuMapper;
 import com.openyich.cloud.cms.repository.SysMenuRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysMenuMapperImpl implements ISysMenuMapper {
+public class SysMenuMapperImpl extends AbastractQueryMapperImpl<SysMenu> implements ISysMenuMapper {
 
   private SysMenuRepository repository;
-  
+
   public SysMenuMapperImpl(SysMenuRepository repository) {
     this.repository = repository;
   }
@@ -33,14 +34,14 @@ public class SysMenuMapperImpl implements ISysMenuMapper {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);    
+    repository.deleteById(id);
   }
 
   @Override
   public void deleteAllById(Iterable<Long> ids) {
     List<SysMenu> entities = Lists.newArrayList();
     ids.forEach(menuId -> entities.add(new SysMenu(menuId)));
-    repository.deleteInBatch(entities);    
+    repository.deleteInBatch(entities);
   }
 
   @Override

@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.alibaba.fastjson.JSON;
+import com.openyich.framework.data.domain.BaseEntity;
 
 /**
  * 在线用户记录

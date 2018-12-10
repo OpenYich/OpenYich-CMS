@@ -1,11 +1,11 @@
 package com.openyich.cloud.cms.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.openyich.cloud.cms.domain.SysMenu;
+import com.openyich.framework.data.repository.JpaRepositoryWrapper;
 
 @Repository
-public interface SysMenuRepository extends JpaRepository<SysMenu, Long> {
+public interface SysMenuRepository extends JpaRepositoryWrapper<SysMenu, Long> {
 
 }

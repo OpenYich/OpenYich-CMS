@@ -1,11 +1,11 @@
 package com.openyich.cloud.cms.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.openyich.cloud.cms.domain.SysDept;
+import com.openyich.framework.data.repository.JpaRepositoryWrapper;
 
 @Repository
-public interface SysDeptRepository extends JpaRepository<SysDept, Long> {
+public interface SysDeptRepository extends JpaRepositoryWrapper<SysDept, Long> {
 
 }

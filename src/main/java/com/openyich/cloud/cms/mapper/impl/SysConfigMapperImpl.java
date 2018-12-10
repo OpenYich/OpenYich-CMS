@@ -11,12 +11,15 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysConfig;
 import com.openyich.cloud.cms.mapper.ISysConfigMapper;
 import com.openyich.cloud.cms.repository.SysConfigRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysConfigMapperImpl implements ISysConfigMapper {
+public class SysConfigMapperImpl extends AbastractQueryMapperImpl<SysConfig>
+    implements
+      ISysConfigMapper {
 
   private SysConfigRepository repository;
-  
+
   public SysConfigMapperImpl(SysConfigRepository repository) {
     this.repository = repository;
   }

@@ -11,9 +11,10 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysDept;
 import com.openyich.cloud.cms.mapper.ISysDeptMapper;
 import com.openyich.cloud.cms.repository.SysDeptRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysDeptMapperImpl implements ISysDeptMapper {
+public class SysDeptMapperImpl extends AbastractQueryMapperImpl<SysDept> implements ISysDeptMapper {
 
   private SysDeptRepository repository;
 

@@ -11,9 +11,12 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysUserOnline;
 import com.openyich.cloud.cms.mapper.ISysUserOnlineMapper;
 import com.openyich.cloud.cms.repository.SysUserOnlineRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysUserOnlineMapperImpl implements ISysUserOnlineMapper {
+public class SysUserOnlineMapperImpl extends AbastractQueryMapperImpl<SysUserOnline>
+    implements
+      ISysUserOnlineMapper {
 
   private SysUserOnlineRepository repository;
 

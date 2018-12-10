@@ -11,12 +11,15 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysOperLog;
 import com.openyich.cloud.cms.mapper.ISysOperLogMapper;
 import com.openyich.cloud.cms.repository.SysOperLogRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysOperLogMapperImpl implements ISysOperLogMapper {
+public class SysOperLogMapperImpl extends AbastractQueryMapperImpl<SysOperLog>
+    implements
+      ISysOperLogMapper {
 
   private SysOperLogRepository repository;
-  
+
   public SysOperLogMapperImpl(SysOperLogRepository repository) {
     this.repository = repository;
   }
@@ -33,14 +36,14 @@ public class SysOperLogMapperImpl implements ISysOperLogMapper {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);    
+    repository.deleteById(id);
   }
 
   @Override
   public void deleteAllById(Iterable<Long> ids) {
     List<SysOperLog> entities = Lists.newArrayList();
     ids.forEach(operId -> entities.add(new SysOperLog(operId)));
-    repository.deleteInBatch(entities);    
+    repository.deleteInBatch(entities);
   }
 
   @Override

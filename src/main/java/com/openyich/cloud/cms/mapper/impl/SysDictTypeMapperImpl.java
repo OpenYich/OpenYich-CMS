@@ -11,9 +11,10 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysDictType;
 import com.openyich.cloud.cms.mapper.ISysDictTypeMapper;
 import com.openyich.cloud.cms.repository.SysDictTypeRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysDictTypeMapperImpl implements ISysDictTypeMapper {
+public class SysDictTypeMapperImpl extends AbastractQueryMapperImpl<SysDictType> implements ISysDictTypeMapper {
 
   private SysDictTypeRepository repository;
   

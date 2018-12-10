@@ -1,11 +1,11 @@
 package com.openyich.cloud.cms.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.openyich.cloud.cms.domain.SysAccessLog;
+import com.openyich.framework.data.repository.JpaRepositoryWrapper;
 
 @Repository
-public interface SysAccessLogRepository extends JpaRepository<SysAccessLog, Long> {
+public interface SysAccessLogRepository extends JpaRepositoryWrapper<SysAccessLog, Long> {
 
 }

@@ -11,12 +11,13 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysPost;
 import com.openyich.cloud.cms.mapper.ISysPostMapper;
 import com.openyich.cloud.cms.repository.SysPostRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysPostMapperImpl implements ISysPostMapper {
+public class SysPostMapperImpl extends AbastractQueryMapperImpl<SysPost> implements ISysPostMapper {
 
   private SysPostRepository repository;
-  
+
   public SysPostMapperImpl(SysPostRepository repository) {
     this.repository = repository;
   }
@@ -33,7 +34,7 @@ public class SysPostMapperImpl implements ISysPostMapper {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);    
+    repository.deleteById(id);
   }
 
   @Override

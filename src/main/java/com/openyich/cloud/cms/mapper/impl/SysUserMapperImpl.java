@@ -11,12 +11,13 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysUser;
 import com.openyich.cloud.cms.mapper.ISysUserMapper;
 import com.openyich.cloud.cms.repository.SysUserRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysUserMapperImpl implements ISysUserMapper {
+public class SysUserMapperImpl extends AbastractQueryMapperImpl<SysUser> implements ISysUserMapper {
 
   private SysUserRepository repository;
-  
+
   public SysUserMapperImpl(SysUserRepository repository) {
     this.repository = repository;
   }
@@ -33,14 +34,14 @@ public class SysUserMapperImpl implements ISysUserMapper {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);    
+    repository.deleteById(id);
   }
 
   @Override
   public void deleteAllById(Iterable<Long> ids) {
     List<SysUser> entities = Lists.newArrayList();
     ids.forEach(userId -> entities.add(new SysUser(userId)));
-    repository.deleteInBatch(entities);    
+    repository.deleteInBatch(entities);
   }
 
   @Override

@@ -11,9 +11,12 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysNotice;
 import com.openyich.cloud.cms.mapper.ISysNoticeMapper;
 import com.openyich.cloud.cms.repository.SysNoticeRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysNoticeMapperImpl implements ISysNoticeMapper {
+public class SysNoticeMapperImpl extends AbastractQueryMapperImpl<SysNotice>
+    implements
+      ISysNoticeMapper {
 
   private SysNoticeRepository repository;
 

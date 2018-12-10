@@ -11,12 +11,15 @@ import com.google.common.collect.Lists;
 import com.openyich.cloud.cms.domain.SysDictData;
 import com.openyich.cloud.cms.mapper.ISysDictDataMapper;
 import com.openyich.cloud.cms.repository.SysDictDataRepository;
+import com.openyich.framework.data.mapper.impl.AbastractQueryMapperImpl;
 
 @Component
-public class SysDictDataMapperImpl implements ISysDictDataMapper {
+public class SysDictDataMapperImpl extends AbastractQueryMapperImpl<SysDictData>
+    implements
+      ISysDictDataMapper {
 
   private SysDictDataRepository repository;
-  
+
   public SysDictDataMapperImpl(SysDictDataRepository repository) {
     this.repository = repository;
   }
@@ -33,14 +36,14 @@ public class SysDictDataMapperImpl implements ISysDictDataMapper {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);    
+    repository.deleteById(id);
   }
 
   @Override
   public void deleteAllById(Iterable<Long> ids) {
     List<SysDictData> entities = Lists.newArrayList();
     ids.forEach(dictId -> entities.add(new SysDictData(dictId)));
-    repository.deleteInBatch(entities);    
+    repository.deleteInBatch(entities);
   }
 
   @Override

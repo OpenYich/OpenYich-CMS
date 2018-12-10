@@ -1,12 +1,12 @@
 package com.openyich.cloud.cms.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.openyich.cloud.cms.domain.SysRoleMenu;
 import com.openyich.cloud.cms.domain.SysRoleMenuPrimaryKey;
+import com.openyich.framework.data.repository.JpaRepositoryWrapper;
 
 @Repository
-public interface SysRoleMenuRepository extends JpaRepository<SysRoleMenu, SysRoleMenuPrimaryKey> {
+public interface SysRoleMenuRepository extends JpaRepositoryWrapper<SysRoleMenu, SysRoleMenuPrimaryKey> {
 
 }
