@@ -18,6 +18,7 @@ spring:
     active:
     - dev
     - swagger
+      
 server:
   port: 8280
   compression:
@@ -26,5 +27,4 @@ server:
     seconds: 2
   servlet:
     context-path: /${spring.application.name}
-  
-
+      
