@@ -3,8 +3,10 @@ package com.openyich.framework.cloud.cms.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.openyich.framework.boot.web.BaseController;
+
 @RestController
-@RequestMapping("api/system/dict/data")
-public class SysDictDataController {
+@RequestMapping("api/system_dict_data")
+public class SysDictDataController extends BaseController {
 
 }

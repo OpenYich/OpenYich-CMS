@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.openyich.framework.cloud.cms.OpenyichCMSApplicationTests;
 import com.openyich.framework.cloud.cms.domain.SysAccessLog;
@@ -43,6 +46,12 @@ public class SysAccessLogMapperTests extends OpenyichCMSApplicationTests {
     list.add(accessLog2);
     
     mapper.saveAll(list);
+  }
+  
+  @Test
+  public void testFindAll() {
+    Page<SysAccessLog> page = mapper.findAll(null, PageRequest.of(0, 2));
+    System.out.println(JSON.toJSONString(page, true));
   }
 
 }
